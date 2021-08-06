@@ -27,6 +27,7 @@ router.put('/:id', validateUserId, (req, res) => {
   // RETURN THE FRESHLY UPDATED USER OBJECT
   // this needs a middleware to verify user id
   // and another middleware to check that the request body is valid
+  console.log(req.user)
 });
 
 router.delete('/:id', validateUserId, (req, res) => {

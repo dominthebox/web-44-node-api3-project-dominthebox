@@ -9,8 +9,7 @@ function logger(req, res, next) {
   next()
 }
 
- async function validateUserId(req, res, next) {
-  // DO YOUR MAGIC
+async function validateUserId(req, res, next) {
   try {
     const user = await User.getById(req.params.id)
     if (!user) {
@@ -24,19 +23,20 @@ function logger(req, res, next) {
   } catch (err) {
     res.status(500).json({
       message: 'There was a problem finding the user',
+      err: err.message,
     })
   }
 }
 
 function validateUser(req, res, next) {
   // DO YOUR MAGIC
-  console.log('logger middleware')
+  console.log('validateUser middleware')
   next()
 }
 
 function validatePost(req, res, next) {
   // DO YOUR MAGIC
-  console.log('logger middleware')
+  console.log('validatePost middleware')
   next()
 }
 
